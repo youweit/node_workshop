@@ -7,7 +7,7 @@ function start(route, handlers){
        
         var pathName = url.parse(req.url).pathname;
          //.pathname -> http://localhost/pathname
-        route(pathname, handlers, res);
+        route(pathName, handlers, res);
         console.log(pathName);
         
         res.writeHead(200,{'Content-Type': 'text/html'});

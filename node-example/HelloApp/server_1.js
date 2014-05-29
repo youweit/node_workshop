@@ -1,6 +1,6 @@
 var hello = require('./HelloModule_1.js');
 var router = require('./router.js');
-var handlers = require("./requestHandlers");
+var handlers = require("./requestHandlers.js");
 
 // 使用 Object 來對應 pathname 與 request handlers 
 var req = {
@@ -9,4 +9,4 @@ var req = {
 }
 
 // 傳遞 request handler
-server.start(router.route, req);
+hello.start(router.route, req);
