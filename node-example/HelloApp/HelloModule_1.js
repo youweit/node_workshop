@@ -2,13 +2,14 @@ var PORT = 8080;
 var http = require('http');
 var url = require('url');
 
-function start(){
+function start(route, handlers){
     function onRequest(req, res){
        
         var pathName = url.parse(req.url).pathname;
          //.pathname -> http://localhost/pathname
-         
+        route(pathname, handlers, res);
         console.log(pathName);
+        
         res.writeHead(200,{'Content-Type': 'text/html'});
         res.write('<h1>QAQa, Hello Node Module</h1>');
         res.end();
